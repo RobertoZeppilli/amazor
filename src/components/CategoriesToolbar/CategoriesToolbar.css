@@ -1,0 +1,11 @@
+/* toolbar */
+.toolbar__category {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(171, 235, 240);  /* temporary color for debugging */
+}
+
+/* .toolbar__category-item {
+
+} */

@@ -1,0 +1,19 @@
+/* appbar */
+.appbar__search {
+    display: flex;
+    align-items: center;
+    margin: 0 5em;
+    flex-grow: 1;   /* grows the search */
+}
+
+.appbar__search-icon {
+    cursor: pointer;
+}
+
+.appbar__search-input {
+    width: 30vw;
+    padding: 0 .4em;
+    margin-left: .5em;
+    border-radius: .1em;
+    background-color: aliceblue;  /* temporary color for debugging */
+}
