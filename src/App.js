@@ -1,3 +1,6 @@
+// router
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
 // material components
 import { Container } from "@material-ui/core"
 
@@ -5,17 +8,23 @@ import { Container } from "@material-ui/core"
 import { CartAppBar } from './components'
 
 // view
-import { CardPageRow } from "./views";
+import { CardPageRow, CategorySummary, ProductPage } from "./views";
 
 // styles
 import './index.css';
 
 function App() {
   return (
-    <Container>
-      <CartAppBar />
-      <CardPageRow />
-    </Container>
+    <Router>
+      <Container>
+        <CartAppBar />
+        <Routes>
+          <Route path="/" exact="true" element={<CardPageRow />} />
+          <Route path="/category/:category" exact="true" element={<CategorySummary />} />
+          <Route path="/products/:id" exact="true" element={<ProductPage />} />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 

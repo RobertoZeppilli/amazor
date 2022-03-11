@@ -1,7 +1,9 @@
 import React from 'react'
 
 // material components
-import { Button, Card, CardActions, CardContent, CardHeader, Link, Typography } from '@material-ui/core'
+import { Button, Card, CardActions, CardContent, CardHeader, Typography } from '@material-ui/core'
+
+import { Link } from 'react-router-dom'
 
 // styles
 import "./CartCard.css"
@@ -11,7 +13,7 @@ const CartCard = ({ title, actionTitle, actionLink, children }) => {
     console.log(children)
     const actions = actionTitle && (<CardActions>
         <Button size="small">
-            <Link href={actionLink}>{actionTitle}</Link>
+            <Link exact="true" to={actionLink}>{actionTitle}</Link>
         </Button>
     </CardActions>)
 
@@ -19,7 +21,7 @@ const CartCard = ({ title, actionTitle, actionLink, children }) => {
         <Card>
             <CardHeader title={title} />
             <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="textSecondary" component="div">
                     {children}
                 </Typography>
             </CardContent>
