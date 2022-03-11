@@ -1,7 +1,7 @@
 import React from 'react'
 
 // material components
-import { AppBar, IconButton, Toolbar, Typography, Link } from '@material-ui/core'
+import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core'
 
 // icons
 import { Menu as MenuIcon, ShoppingCart } from "@material-ui/icons";
@@ -22,7 +22,7 @@ const CartAppBar = () => {
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <MenuIcon />
                     </IconButton>
-                    
+
                     <Typography variant="h6" color="inherit" component="div">
                         Amazor
                     </Typography>
