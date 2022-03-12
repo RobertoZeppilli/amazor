@@ -24,6 +24,14 @@ const ProductPage = () => {
     return setProduct(dataFromServer[0])
   }
 
+  const tabDetailsKeysJSX = product && product?.details && Object.keys(product?.details).map((tab, index) => (
+    <Tab key={`tab-${index}`} label={tab} {...a11yProps(index)} />
+  ))
+
+  const tabContentJSX = product && product?.details && Object.keys(product?.details).map((content, index) => (<TabPanel key={`content-${index}`} value={value} index={index}>
+    {product?.details[content]}
+  </TabPanel>))
+
   useEffect(() => {
     getProductFromServer()
   }, [])
@@ -35,12 +43,11 @@ const ProductPage = () => {
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          {product && product?.details && Object.keys(product?.details).map((tab, index) => (
-            <Tab key={`tab-${index}`} label={tab} {...a11yProps(index)} />
-          ))}
+          {tabDetailsKeysJSX}
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      {tabContentJSX}
+      {/* <TabPanel value={value} index={0}>
         {product?.details?.techInfo}
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -48,7 +55,7 @@ const ProductPage = () => {
       </TabPanel>
       <TabPanel value={value} index={2}>
         {product?.details?.warranty}
-      </TabPanel>
+      </TabPanel> */}
     </div>
   )
 }
