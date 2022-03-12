@@ -10,7 +10,6 @@ import "./CartCard.css"
 
 const CartCard = ({ title, actionTitle, actionLink, children }) => {
 
-    console.log(children)
     const actions = actionTitle && (<CardActions>
         <Button size="small">
             <Link exact="true" to={actionLink}>{actionTitle}</Link>

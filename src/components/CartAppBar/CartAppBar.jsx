@@ -11,6 +11,7 @@ import { AppBarInput, CategoriesToolbar } from '../index'
 
 // styles
 import "./CartAppBar.css"
+import { Link } from 'react-router-dom';
 
 
 const CartAppBar = () => {
@@ -23,9 +24,11 @@ const CartAppBar = () => {
                         <MenuIcon />
                     </IconButton>
 
-                    <Typography variant="h6" color="inherit" component="div">
-                        Amazor
-                    </Typography>
+                    <Link to="/" exact="true">
+                        <Typography variant="h6" color="inherit" component="h1">
+                            Amazor
+                        </Typography>
+                    </Link>
 
                     <AppBarInput />
 
@@ -34,7 +37,7 @@ const CartAppBar = () => {
                 </Toolbar>
             </AppBar>
 
-            <CategoriesToolbar/>
+            <CategoriesToolbar />
         </>
     )
 }

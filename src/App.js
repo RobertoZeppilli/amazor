@@ -20,7 +20,7 @@ function App() {
         <CartAppBar />
         <Routes>
           <Route path="/" exact="true" element={<CardPageRow />} />
-          <Route path="/category/:category" exact="true" element={<CategorySummary />} />
+          <Route path="/categories/:category" exact="true" element={<CategorySummary />} />
           <Route path="/products/:id" exact="true" element={<ProductPage />} />
         </Routes>
       </Container>

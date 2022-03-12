@@ -3,9 +3,15 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 1.3em;
     background-color: rgb(171, 235, 240);  /* temporary color for debugging */
 }
 
-/* .toolbar__category-item {
-
-} */
+.toolbar__category-item {
+    color: #fff;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+.toolbar__category-item:hover {
+    color: #333;
+}

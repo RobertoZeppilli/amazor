@@ -9,35 +9,17 @@ import { CartCard } from '../../components'
 
 const CategorySummary = () => {
     const { category } = useParams()
+    console.log(category)
     const [featureProducts, setFeatureProducts] = useState([])
 
+    const getFeturedProductsFromServer = async () => {
+        const dataFromServer = await fetch("http://localhost:5000/categories/2/featured")
+        const resFromServer = await dataFromServer.json()
+        setFeatureProducts(resFromServer)
+    }
+
     useEffect(() => {
-        setFeatureProducts([{
-            id: 1,
-            name: "Computer",
-            description: "descrizione",
-            price: 769.89
-        }, {
-            id: 2,
-            name: "Computer",
-            description: "descrizione",
-            price: 769.89
-        }, {
-            id: 3,
-            name: "Computer",
-            description: "descrizione",
-            price: 769.89
-        }, {
-            id: 4,
-            name: "Computer",
-            description: "descrizione",
-            price: 769.89
-        }, {
-            id: 5,
-            name: "Computer",
-            description: "descrizione",
-            price: 769.89
-        },])
+        getFeturedProductsFromServer()
     }, []);
 
     const featureProductsJSX = featureProducts.map((product) =>
