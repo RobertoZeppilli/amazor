@@ -18,14 +18,16 @@ const ProductPage = () => {
     setValue(newValue);
   };
 
+  const getProductFromServer = async () => {
+    const productFromServer = await fetch("http://localhost:5000/products/2")
+    const dataFromServer = await productFromServer.json()
+    return setProduct(dataFromServer[0])
+  }
+
   useEffect(() => {
-    setProduct({
-      id: productId,
-      name: "test",
-      description: "test description",
-      price: 100.20
-    })
+    getProductFromServer()
   }, [])
+
 
   return (
     <div>
@@ -33,19 +35,19 @@ const ProductPage = () => {
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          {product && product?.details && Object.keys(product?.details).map((tab, index) => (
+            <Tab key={`tab-${index}`} label={tab} {...a11yProps(index)} />
+          ))}
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Item One
+        {product?.details?.techInfo}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        {product?.details?.support}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        {product?.details?.warranty}
       </TabPanel>
     </div>
   )
