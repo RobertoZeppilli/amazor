@@ -14,11 +14,11 @@ const CardPageRow = () => {
         <Grid container spacing={3}>
             <Grid item xs>
                 <CartCard
-                    title="product 1"
-                    actionTitle="info"
-                    actionLink="#info"
+                    title="Segui i trend del momento"
+                    actionTitle="Più info"
+                    actionLink="#"
                 >
-                    <b>ciao</b>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6T5FGoNVUgWNoLrb46sLjNc3e3GPCVjqQbfQntF-a5hHyU1Izb3Yj1JbEO2JIYuxiLVw&usqp=CAU" alt="shipping" />
                 </CartCard>
             </Grid>
             <Grid item xs>
@@ -32,13 +32,21 @@ const CardPageRow = () => {
             </Grid>
             <Grid item xs>
                 <CartCard
-                    title="product 3"
-                />
+                    title="Scopri le nuove offerte"
+                    actionTitle="Sbrigati!"
+                    actionLink="#"
+                >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6T5FGoNVUgWNoLrb46sLjNc3e3GPCVjqQbfQntF-a5hHyU1Izb3Yj1JbEO2JIYuxiLVw&usqp=CAU" alt="shipping" />
+                </CartCard>
             </Grid>
             <Grid item xs>
                 <CartCard
-                    title="product 4"
-                />
+                    title="Libri Best Seller"
+                    actionTitle="Vedi la classifica"
+                    actionLink="#"
+                >
+                    <img src="https://www.viverediscrittura.it/VDS/wp-content/uploads/2018/02/Come-scrivere-un-best-seller.jpg" alt="best seller libri" />
+                </CartCard>
             </Grid>
         </Grid>
     )

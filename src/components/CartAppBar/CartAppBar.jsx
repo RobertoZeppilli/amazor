@@ -4,7 +4,7 @@ import React from 'react'
 import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core'
 
 // icons
-import { Menu as MenuIcon, ShoppingCart } from "@material-ui/icons";
+import { ShoppingCart } from "@material-ui/icons";
 
 // components
 import { AppBarInput, CategoriesToolbar } from '../index'
@@ -19,10 +19,6 @@ const CartAppBar = () => {
         <>
             <AppBar position="static">
                 <Toolbar variant="dense">
-
-                    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        <MenuIcon />
-                    </IconButton>
 
                     <Link to="/" exact="true">
                         <Typography variant="h6" color="inherit" component="h1">
