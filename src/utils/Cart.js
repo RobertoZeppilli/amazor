@@ -7,7 +7,6 @@ function cartAddItem({ id }) {
 
     const cartIDs = Object.keys(cart)
     if (cartIDs.includes(id)) {
-        console.log(id)
         cart[id] = cart[id] + 1
     } else {
         cart[id] = 1
@@ -15,4 +14,12 @@ function cartAddItem({ id }) {
     sessionStorage.setItem("cart", JSON.stringify(cart))
 }
 
-export { cartInit, cartAddItem }
+function getCartItemsID() {
+    const cart = JSON.parse(sessionStorage.getItem("cart"))
+
+    return Object.keys(cart).map(id => {
+        return { id, quantity: cart[id] }
+    })
+}
+
+export { cartInit, cartAddItem, getCartItemsID }

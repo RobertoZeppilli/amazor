@@ -8,7 +8,7 @@ import { Container } from "@material-ui/core"
 import { CartAppBar } from './components'
 
 // view
-import { CardPageRow, CategorySummary, ProductPage } from "./views";
+import { CardPageRow, CategorySummary, ProductPage, Checkout } from "./views";
 
 // cart
 import { cartInit } from "./utils/Cart";
@@ -26,6 +26,7 @@ function App() {
           <Route path="/" exact="true" element={<CardPageRow />} />
           <Route path="/categories/:category" exact="true" element={<CategorySummary />} />
           <Route path="/products/:id" exact="true" element={<ProductPage />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Container>
     </Router>

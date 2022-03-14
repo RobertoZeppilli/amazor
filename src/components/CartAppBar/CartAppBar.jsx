@@ -32,7 +32,9 @@ const CartAppBar = () => {
 
                     <AppBarInput />
 
-                    <ShoppingCart />
+                    <Link to="/checkout">
+                        <ShoppingCart />
+                    </Link>
 
                 </Toolbar>
             </AppBar>
