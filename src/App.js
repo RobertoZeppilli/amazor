@@ -10,12 +10,14 @@ import { CartAppBar } from './components'
 // view
 import { CardPageRow, CategorySummary, ProductPage } from "./views";
 
+// cart
+import { cartInit } from "./utils/Cart";
+
 // styles
 import './index.css';
 
 function App() {
-  sessionStorage.clear()
-  sessionStorage.setItem("cart", JSON.stringify([]));
+  cartInit()
   return (
     <Router>
       <Container>

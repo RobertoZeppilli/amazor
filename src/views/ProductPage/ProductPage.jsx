@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 // material components
-import { Box, Tab, Tabs } from '@material-ui/core';
+import { Box, Button, Tab, Tabs } from '@material-ui/core';
 
 // ui
 import { TabPanel, a11yProps } from './tab-panel'
+import { cartAddItem } from '../../utils/Cart';
 
 
 const ProductPage = () => {
@@ -13,6 +14,8 @@ const ProductPage = () => {
   const productId = useParams()
   const [product, setProduct] = useState({})
   const [value, setValue] = useState(0)
+
+  const { id, name, price } = product
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -48,6 +51,7 @@ const ProductPage = () => {
       </Box>
 
       {tabContentJSX}
+      <Button onClick={() => cartAddItem({ id})}>Add To Cart</Button>
     </div>
   )
 }
