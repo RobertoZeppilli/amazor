@@ -14,6 +14,8 @@ import { CardPageRow, CategorySummary, ProductPage } from "./views";
 import './index.css';
 
 function App() {
+  sessionStorage.clear()
+  sessionStorage.setItem("cart", JSON.stringify([]));
   return (
     <Router>
       <Container>

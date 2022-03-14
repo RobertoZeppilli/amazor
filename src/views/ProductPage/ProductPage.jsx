@@ -46,16 +46,8 @@ const ProductPage = () => {
           {tabDetailsKeysJSX}
         </Tabs>
       </Box>
+
       {tabContentJSX}
-      {/* <TabPanel value={value} index={0}>
-        {product?.details?.techInfo}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        {product?.details?.support}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        {product?.details?.warranty}
-      </TabPanel> */}
     </div>
   )
 }
